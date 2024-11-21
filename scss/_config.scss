@@ -1,0 +1,51 @@
+// USER VARIABLES SECTION
+
+$fontsize: 16px;
+$color-text-dark: #1C2323;
+$color-text-secondary-dark: #486958;
+$color-text-medium: #404242;
+$color-text-light: #486958;
+$color-accent-light: #58A9A5;
+$color-background-light: #CCF0E6;
+$color-white: #FFFFFF;
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl) {
+  @font-face {
+    font-family: $fname;
+    font-style: $fstyle;
+    font-weight: $fweight;
+    src: url($furl) format("truetype");
+  }
+}
+
+@include font("poppins", normal, 400, "../fonts/poppins/Poppins-Regular.ttf");
+@include font("poppins", normal, 700, "../fonts/poppins/Poppins-Bold.ttf");
+@include font("poppins", normal, 800, "../fonts/poppins/Poppins-ExtraBold.ttf");
+@include font("poppins", normal, 600, "../fonts/poppins/Poppins-SemiBold.ttf");
+@include font("poppins", normal, 500, "../fonts/poppins/Poppins-Medium.ttf");
+@include font("poppins", italic, 400, "../fonts/poppins/Poppins-Italic.ttf");
+
+body {
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  background-color: $color-white;
+  margin-top: 4.8rem;
+  margin-left: 8.2rem;
+  margin-right: 6rem;
+}
+
+@media (max-width: 80rem) {
+  body {
+    margin-left: 4.1rem;
+    margin-right: 3rem;
+  }
+}
+
+@media (max-width: 60rem) {
+  body {
+    margin-left: 2rem;
+    margin-right: 1rem;
+  }
+}
