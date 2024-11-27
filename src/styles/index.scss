@@ -1,0 +1,611 @@
+@use 'reset';
+@use 'config';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+
+  @media (max-width: 50rem) {
+    flex-direction: column;
+  }
+
+  &__left {}
+
+  &__nav {}
+
+  &__right {}
+
+  &__button {
+    text-decoration: none;
+    font-weight: 500;
+    background-color: config.$color-accent-light;
+    color: config.$color-white;
+    padding: 1.2rem 4.5rem;
+    border-radius: 0.8rem;
+    font-size: 1.2rem;
+
+    @media (max-width: 80rem) {
+      padding: 1.2rem 3.5rem;
+    }
+
+    @media (max-width: 60rem) {
+      padding: 1.2rem 2.5rem;
+    }
+  }
+}
+
+.logo {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 0.5rem;
+  margin-right: 4.4rem;
+
+
+  @media (max-width: 80rem) {
+    margin-right: 2.2rem;
+  }
+
+  @media (max-width: 50rem) {
+    margin-right: 0;
+  }
+
+  &__img {
+    width: auto;
+    height: auto;
+    max-height: 2.7rem;
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: config.$color-accent-light;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    gap: 4.4rem;
+    align-items: center;
+    list-style-type: none;
+
+    &>.nav__item {
+      position: relative;
+    }
+
+    .nav__list {
+      display: none;
+      position: absolute;
+      left: -2rem;
+      top: calc(100% + 0.3rem);
+      background-color: rgba(230, 230, 230, 0.9);
+      box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+
+
+      .nav__item {
+        padding: 0.75rem 1.5rem;
+        margin-bottom: 0.5rem;
+        border-radius: 0.25rem;
+
+        &.has-submenu {
+          position: relative;
+
+          .nav__list {
+            left: 100%;
+            top: 0;
+          }
+        }
+      }
+    }
+
+    .nav__item:hover>.nav__list {
+      display: block;
+    }
+
+    @media (max-width: 80rem) {
+      gap: 2.2rem;
+    }
+
+    @media (max-width: 50rem) {
+      margin-top: 1.5rem;
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    text-align: center;
+  }
+
+  &__link {
+    font-size: 1.25rem;
+    color: config.$color-text-dark;
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:hover {
+      font-weight: 600;
+      color: config.$color-accent-light;
+    }
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.lets-go {
+  margin-top: 8.5rem;
+  display: flex;
+  gap: 4.5rem;
+
+
+  @media (max-width: 60rem) {
+    flex-direction: column;
+  }
+
+  &__content {
+    flex: 1;
+    max-width: 45%;
+
+    @media (max-width: 60rem) {
+      max-width: 100%;
+    }
+  }
+}
+
+.image-section {
+  flex: 1;
+  align-self: center;
+  margin-top: -3rem;
+
+  @media (max-width: 60rem) {
+    margin-top: 1rem;
+    max-width: 60%;
+  }
+
+  &__img {
+    width: 105%;
+    height: auto;
+  }
+}
+
+
+.primary {
+
+  &__title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.5;
+    color: config.$color-text-dark;
+  }
+
+  &__description {
+    margin-top: 2.25rem;
+    margin-bottom: 4rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: config.$color-text-medium;
+  }
+
+  &__button {
+    text-decoration: none;
+    font-weight: 700;
+    background-color: config.$color-accent-light;
+    color: config.$color-white;
+    padding: 1.2rem 4.5rem;
+    margin-left: 0.25rem;
+    border-radius: 0.8rem 0.8rem 0.8rem 0;
+    font-size: 1.2rem;
+    border: none;
+  }
+}
+
+.how-it-works {
+  margin-top: 6rem;
+  text-align: center;
+
+  &__description-div {
+    margin-top: -1rem;
+  }
+
+  &__content {
+    margin-top: -0.5rem;
+    display: flex;
+  }
+
+  &__video-image {
+    width: 66%;
+    height: auto;
+  }
+
+
+  &__play-video-button {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    left: calc(66% - 3.5rem);
+    align-self: flex-end;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 0 0 0.8rem rgba(255, 255, 255, 0.3);
+    border-radius: 90%;
+  }
+
+  &__play-video-button-image {
+    width: 100%;
+    height: auto;
+  }
+
+  &__text-content {
+    text-align: left;
+    border-radius: 0 0.6rem 0.6rem 0;
+    background-color: config.$color-background-light;
+  }
+
+  &__text {
+    margin-top: 3.5rem;
+    margin-left: 5.5rem;
+    margin-right: 7rem;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: config.$color-text-secondary-dark;
+
+    @media (max-width: 80rem) {
+      margin-left: 2.5rem;
+      margin-right: 3rem;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    margin-left: 5.5rem;
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1.5;
+    color: config.$color-text-secondary-dark;
+    letter-spacing: 0.2rem;
+
+    @media (max-width: 60rem) {
+      margin-left: 2.5rem;
+    }
+  }
+
+}
+
+.mission {
+  margin-top: 7.5rem;
+  text-align: center;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+
+
+    @media (max-width: 60rem) {
+      flex-direction: column;
+    }
+  }
+
+  &__image {
+    flex: 1;
+    max-width: 40%;
+    overflow: hidden;
+    height: auto;
+
+    @media (max-width: 60rem) {
+      max-width: 60%;
+    }
+  }
+
+  &__text {
+    flex: 1;
+    text-align: left;
+    align-self: flex-start;
+  }
+}
+
+.medium {
+  &__title {
+    margin-left: 5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: config.$color-text-dark;
+  }
+
+  &__description {
+    margin-left: 5rem;
+    margin-right: 7.5rem;
+    margin-top: 2.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: config.$color-text-medium;
+  }
+}
+
+.projects {
+  margin-top: 5.75rem;
+
+  &__header {
+    text-align: center;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+    gap: 5rem;
+
+    @media (max-width: 55rem) {
+      flex-direction: column;
+    }
+  }
+}
+
+.divider {
+  margin-top: -3rem;
+
+  &__image {
+    width: 8%;
+    height: auto;
+  }
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+
+  @media (max-width: 55rem) {
+    text-align: center;
+  }
+
+  &__image {
+    width: 95%;
+    height: auto;
+
+    @media (max-width: 55rem) {
+      width: 55%;
+      align-self: center;
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: config.$color-accent-light;
+  }
+
+  &__description {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: config.$color-text-secondary-dark;
+  }
+}
+
+.testimonial {
+  text-align: center;
+  margin-top: 12rem;
+
+  &__logos {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+
+    @media (max-width: 55rem) {
+      flex-direction: column;
+    }
+  }
+
+  &__logo {
+    max-width: 15%;
+    height: auto;
+
+    @media (max-width: 55rem) {
+      align-self: center;
+      max-width: 30%;
+    }
+  }
+
+  &__content {
+    margin-top: 3rem;
+    display: flex;
+  }
+
+  &__image {
+    width: 38%;
+    height: auto;
+  }
+
+  &__details {
+    background-color: config.$color-background-light;
+  }
+
+  &__stats {
+    margin-left: 7rem;
+    margin-top: 2.75rem;
+    display: flex;
+    gap: 6rem;
+
+    @media (max-width: 80rem) {
+      flex-direction: column;
+      gap: 1rem;
+      margin-left: 3rem;
+    }
+  }
+
+  &__stat {
+    color: config.$color-accent-light;
+  }
+
+  &__number {
+    text-align: left;
+    line-height: 1.5;
+    font-weight: 800;
+    font-size: 3.5rem;
+  }
+
+  &__description {
+    margin-top: -0.75rem;
+    text-align: left;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+
+  &__quote {
+    text-align: left;
+    margin-left: 7rem;
+
+    @media (max-width: 80rem) {
+      margin-left: 3rem;
+    }
+  }
+
+  &__quote-text-image {
+    max-width: 5%;
+    height: auto;
+    position: absolute;
+    left: calc(38% + 8rem);
+    margin-top: -3rem;
+    z-index: 0;
+
+    @media (max-width: 80rem) {
+      margin-top: -1.5rem;
+      left: calc(38% + 4rem);
+    }
+  }
+
+  &__quote-text {
+    position: relative;
+    color: config.$color-text-secondary-dark;
+    margin-top: 6.25rem;
+    margin-right: 3rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.5;
+    z-index: 1;
+  }
+
+  &__author {
+    text-align: left;
+    font-size: 1.25rem;
+    font-style: italic;
+    font-weight: 500;
+    margin-top: 2rem;
+    line-height: 1.5;
+    color: config.$color-accent-light;
+  }
+}
+
+.footer {
+  margin-top: 12.5rem;
+  margin-bottom: 12rem;
+  display: flex;
+  gap: 3rem;
+
+  &__title {
+    width: 40%;
+  }
+
+  &__description {
+    color: config.$color-text-secondary-dark;
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  &__divider {
+    margin-top: 1.5rem;
+  }
+
+  &__divider-image {
+    width: 30%;
+    height: auto;
+  }
+}
+
+.contact {
+
+  &__form {
+    border: 0.01rem solid config.$color-text-light;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__form-label {
+    color: config.$color-text-light;
+    font-size: 1.25rem;
+    margin-top: 2.75rem;
+    margin-left: 2.75rem;
+    font-weight: 500;
+    line-height: 1.5;
+
+    @media (max-width: 60rem) {
+      margin-top: 1.5rem;
+      margin-left: 1.5rem;
+    }
+  }
+
+  &__form-input {
+    margin-left: 2.75rem;
+    margin-right: 2.75rem;
+    border: none;
+    background: transparent;
+    outline: none;
+    border-bottom: 0.05rem solid config.$color-text-light;
+
+    @media (max-width: 60rem) {
+      margin-top: 1.5rem;
+      margin-left: 1.5rem;
+    }
+  }
+
+  &__form-input:focus {
+    outline: none;
+    border: none;
+    border-bottom: 0.05rem solid config.$color-text-light;
+  }
+
+  &__form-input::placeholder {
+    color: transparent;
+  }
+
+  &__button {
+    margin: 2.75rem;
+    align-self: flex-end;
+  }
+
+}
+
+.addition {
+  margin-top: 5rem;
+}
+
+.theme-switcher {}
+
+.modal-windows {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  display: flex;
+  gap: 4rem;
+}

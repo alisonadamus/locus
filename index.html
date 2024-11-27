@@ -10,11 +10,11 @@
         <link href="images/locus-icon.svg" rel="icon">
         <meta name="author" content="alisonadamus">
         <meta property="og:title" content="Locus">
-
-        <link href="scss/index.css" rel="stylesheet">
     </head>
 
     <body>
+        <script src="/src/scripts/main.js" type="module"></script>
+
         <header class="header">
             <div class="header__left">
                 <a class="logo" href="/#">
@@ -23,22 +23,7 @@
                 </a>
             </div>
 
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a class="nav__link" href="/#">Home</a>
-                    </li>
-                    <li class="nav__item">
-                        <a class="nav__link" href="/#">Contact</a>
-                    </li>
-                    <li class="nav__item">
-                        <a class="nav__link" href="/#">Location</a>
-                    </li>
-                    <li class="nav__item">
-                        <a class="nav__link" href="/#">About Us</a>
-                    </li>
-                </ul>
-            </nav>
+            <nav class="nav" id="menu"></nav>
 
             <div class="header__right">
                 <a class="header__button" href="/#">Sign Up</a>
@@ -203,12 +188,24 @@
                     required>
 
                 <label class="contact__form-label" for="description">Description</label>
-                <input class="contact__form-input" id="description" placeholder="Enter your message" required></input>
+                <input class="contact__form-input" id="description" placeholder="Enter your message" required>
                 <div class="contact__button">
                     <button class="primary__button" type="submit">Send now</button>
                 </div>
             </form>
         </footer>
+        <section class="addition">
+            <div class="theme-switcher">
+                <button class="primary__button" id="theme-toggle">Change theme</button>
+            </div>
+            <div class="modal-windows">
+                <button class="primary__button" id="show-warning">Show Warning</button>
+                <button class="primary__button" id="show-error">Show Error</button>
+                <button class="primary__button" id="show-success">Show Success</button>
+                <button class="primary__button" id="show-info">Show Info</button>
+            </div>
+        </section>
+
     </body>
 
 </html>
